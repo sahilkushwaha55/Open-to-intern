@@ -43,7 +43,7 @@ const createIntern = async function (req, res) {
 
         //-------[ Name Validation]
 
-        if (!(/[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/.test(name)))
+        if (!(/^[a-zA-Z]+[\-'\s]?[a-zA-Z ]+$/.test(name)))
             return res.status(400).send({ status: false, message: "Name is Invalid " })
 
         //-------[ Email Validation]

@@ -24,7 +24,7 @@ const createCollege = async (req, res) => {
          //-------[ Name Validation]
 
          if (!name) return res.status(400).send({ status: false, message: "Name Is required" });
-         if (!(/[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/.test(name)))
+         if (!(/^[A-Za-z]+$/.test(name)))
          return res.status(400).send({ status: false, message: "Name is Invalid" })
 
           //-------[ Name Validation]
@@ -35,7 +35,7 @@ const createCollege = async (req, res) => {
          //-------[ FullName Validation]
 
         if (!fullName) return res.status(400).send({ status: false, message: "Full Name Is required" });
-        if (!(/[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/.test(fullName)))
+        if (!(/[!@#$ %^&*()_+\-=\[\]{};':"\\|,.<>\/?] +/.test(fullName)))
         return res.status(400).send({ status: false, message: "Full Name is Invalid" })
 
          //-------[ Link Validation]
